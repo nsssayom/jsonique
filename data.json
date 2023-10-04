@@ -1,0 +1,376 @@
+{
+  "title": "Rubiyet Fardous",
+  "titleLogo": null,
+  "favicon": null,
+  "nav": {
+      "navMenus": [
+          {
+              "name": "Home",
+              "page": "home"
+          },
+          {
+              "name": "Works",
+              "page": "works"
+          },
+          {
+              "name": "Academics",
+              "page": "academics"
+          },
+          {
+              "name": "Research",
+              "page": "research"
+          },
+          {
+              "name": "Projects",
+              "page": "projects"
+          }
+      ],
+      "navIcons": [
+          {
+              "name": "linkedin",
+              "iconImage": "BsLinkedin",
+              "link": "https://www.linkedin.com/in/sayomshakib/"
+          },
+          {
+              "name": "github",
+              "iconImage": "BsGithub",
+              "link": "www.github.com/sayomshakib"
+          },
+          {
+              "name": "scholar",
+              "iconImage": "SiGooglescholar",
+              "link": "https://scholar.google.com/citations?user=Z3Z4QYIAAAAJ&hl=en"
+          }
+      ]
+  },
+  "pages": [
+      {
+          "id": "home",
+          "title": null,
+          "titleIcon": null,
+          "content": {
+              "name": "Rubiyet Fardous",
+              "designation": "Software Engineer",
+              "info": [
+                  {
+                      "infoIcon": "BiBriefcase",
+                      "infoText": [
+                          {
+                              "text": "Software Engineer"
+                          },
+                          {
+                              "text": "Arbree LTD.",
+                              "link": "https://www.arbreesolutions.com"
+                          }
+                      ]
+                  },
+                  {
+                      "infoIcon": "BiEnvelope",
+                      "infoText": [
+                          {
+                              "text": "rubiyetfardous@gmail.com",
+                              "link": "mailto:rubiyetfardous@gmail.com"
+                          }
+                      ]
+                  },
+                  {
+                      "infoIcon": "BsTelephone",
+                      "infoText": [
+                          {
+                              "text": "+8801701015056",
+                              "link": "tel:+8801701015056"
+                          }
+                      ]
+                  },
+                  {
+                      "infoIcon": "LiaDiscord",
+                      "infoText": [
+                          {
+                              "text": "iluminast",
+                              "link": "https://discordapp.com/users/522845318035931137"
+                          }
+                      ]
+                  },
+                  {
+                      "infoIcon": "GrLocation",
+                      "infoText": [
+                          {
+                              "text": "Dhaka, Bangladesh"
+                          }
+                      ]
+                  }
+              ],
+              "description": [
+                  "A Full Stack Engineer specializing in Embedded Systems, IoT, Deep Learning and Web Development. I have graduated Summa Cum Laude from AIUB with a BSc. degree in Computer Science and Engineering.",
+                  "Currently working as a Linux Developer at meldCX, I design and build Linux distributions for ARM-based systems with OTA update capabilities. I also create memory-safe Linux services that expose embedded device driver functions over the network, simplifying application development. 🚀"
+              ],
+              "actionButton": {
+                  "text": "Download Resume",
+                  "actionButtonIcon": "BsDownload",
+                  "link": "https://drive.google.com/file/d/1Z3Z4QYIAAAAJ/view?usp=sharing"
+              }
+          }
+      },
+      {
+          "id": "works",
+          "title": "Experiences",
+          "titleIcon": "BiBriefcase",
+          "content": {
+              "experiences": [
+                  {
+                      "designation": "Linux Developer",
+                      "company": {
+                          "name": "meldCX",
+                          "link": "https://www.meldcx.com"
+                      },
+                      "duration": "May 2023 - Present",
+                      "location": "Dhaka, Bangladesh",
+                      "description": [
+                          "Designing and building Linux distributions for ARM-based systems with OTA update capabilities.",
+                          "Creating memory-safe Linux services that expose embedded device driver functions over the network, simplifying application development.",
+                          "Developing a Linux-based IoT platform for managing and monitoring embedded devices."
+                      ],
+                      "associatedSkills": [
+                          "C/C++",
+                          "Python",
+                          "Node.js",
+                          "TypeScript",
+                          "Bash"
+                      ]
+                  },
+                  {
+                      "designation": "Sr. Software Engineer",
+                      "company": {
+                          "name": "hellotask",
+                          "link": "https://www.hellotask.app"
+                      },
+                      "duration": "January 2023 - May 2023",
+                      "location": "Dhaka, Bangladesh",
+                      "description": [
+                          "Designing and building Linux distributions for ARM-based systems with OTA update capabilities.",
+                          "Creating memory-safe Linux services that expose embedded device driver functions over the network, simplifying application development.",
+                          "Developing a Linux-based IoT platform for managing and monitoring embedded devices."
+                      ],
+                      "associatedSkills": [
+                          "Linux",
+                          "Yocto",
+                          "Docker",
+                          "Git",
+                          "Jira",
+                          "Confluence",
+                          "Agile"
+                      ]
+                  },
+                  {
+                      "designation": "Lecturer, Dept. of ICE/ETE",
+                      "company": {
+                          "name": "DIU",
+                          "link": "https://www.daffodilvarsity.edu.bd"
+                      },
+                      "duration": "January 2023 - May 2023",
+                      "location": "Dhaka, Bangladesh",
+                      "description": [
+                          "Designing and building Linux distributions for ARM-based systems with OTA update capabilities.",
+                          "Creating memory-safe Linux services that expose embedded device driver functions over the network, simplifying application development.",
+                          "Developing a Linux-based IoT platform for managing and monitoring embedded devices."
+                      ],
+                      "associatedSkills": [
+                          "Linux",
+                          "Yocto",
+                          "Docker",
+                          "Git",
+                          "Jira",
+                          "Confluence",
+                          "Agile"
+                      ]
+                  }
+              ],
+              "additionalSkills": ["Arduino", "Raspberry Pi", "ESP32", "ESP8266", "STM32", "AVR", "PIC"]
+          }
+      },
+      {
+          "id": "academics",
+          "title": "Education",
+          "titleIcon": "GiGraduateCap",
+          "content": {
+              "educations": [
+                  {
+                      "degree": "BSc. in CSE",
+                      "institute": {
+                          "name": "AIUB",
+                          "link": "https://www.aiub.edu"
+                      },
+                      "duration": "May 2023 - Present",
+                      "result": "CGPA 3.96 out of 4.00",
+                      "location": "Dhaka, Bangladesh",
+                      "description": [
+                          "Graduated Summa Cum Laude",
+                          "Undergrad Thesis: Disaster Victim Tracking and Rescue Support System with Failsafe Multilayer Communication Networks"
+                      ]
+                  },
+                  {
+                    "degree": "BSc. in CSE",
+                    "institute": {
+                        "name": "AIUB",
+                        "link": "https://www.aiub.edu"
+                    },
+                    "duration": "May 2023 - Present",
+                    "result": "CGPA 3.96 out of 4.00",
+                    "location": "Dhaka, Bangladesh",
+                    "description": [
+                        "Graduated Summa Cum Laude",
+                        "Undergrad Thesis: Disaster Victim Tracking and Rescue Support System with Failsafe Multilayer Communication Networks"
+                    ]
+                },                  {
+                    "degree": "BSc. in CSE",
+                    "institute": {
+                        "name": "AIUB",
+                        "link": "https://www.aiub.edu"
+                    },
+                    "duration": "May 2023 - Present",
+                    "result": "CGPA 3.96 out of 4.00",
+                    "location": "Dhaka, Bangladesh",
+                    "description": [
+                        "Graduated Summa Cum Laude",
+                        "Undergrad Thesis: Disaster Victim Tracking and Rescue Support System with Failsafe Multilayer Communication Networks"
+                    ]
+                }
+              ],
+              "additionalSkills": ["Arduino", "Raspberry Pi", "ESP32", "ESP8266", "STM32", "AVR", "PIC"]
+          }
+      },
+      {
+          "id": "research",
+          "title": "Research",
+          "titleIcon": "GiArchiveResearch",
+          "content": {
+              "research": [
+                  {
+                      "Title": "Bridge Crack Detection Us-ing Dense Convolutional Network (DenseNet)",
+                      "Authors": [
+                          {
+                              "name": "Alfaz, N."
+                          },
+                          {
+                              "name": "Hasnat, A., Khan"
+                          },
+                          {
+                              "name": "Sayom, N. S.",
+                              "self": true
+                          },
+                          {
+                              "name": "Bhowmik, A."   
+                          }
+                      ],
+                      "codeRepository": "https://www.github.com/sayomshakib/opengaze",
+                      "doi": "https://doi.org/10.1145/3542954.3543027",
+                      "abstract": "Due to the increased volume of national, international, and even intercontinental transportations, it has been a critical responsibility for the road and transport authorities to ensure the safety of the transits. Bridges, in particular, require special maintenance because these are typically built in strategic locations, are more vulnerable to natural disasters, and can inflict more damage to life and property if collapsed. In addition to being expensive and time-consuming, manual structure health monitoring (SHM) is also error-prone, but this is still the standard practice in many countries, especially in Bangladesh. This paper presents a deep learning approach to detect cracks in concrete bridge surfaces from images using Dense Convolutional Network (DenseNet) with 99.83% detection accuracy to automate SHM, making it less expensive, efficient, and accurate.",
+                      "citation": "Nazia Alfaz, Abul Hasnat, ALVI MD. RAGIB NIHAL KHAN, Nazmus Shakib Sayom, and Abhijit Bhowmik. 2022. Bridge Crack Detection Using Dense Convolutional Network (DenseNet). In Proceedings of the 2nd International Conference on Computing Advancements (ICCA '22). Association for Computing Machinery, New York, NY, USA, 509–515. https://doi.org/10.1145/3542954.3543027"
+                  },
+                  {
+                      "Title": "A Deep Convolutional Neural NetworkBased Approach to Classify and Detect Crack in Concrete Surface ...",
+                      "Authors": [
+                          {
+                              "name": "Alfaz, N."
+                          },
+                          {
+                              "name": "Hasnat, A., Khan"
+                          },
+                          {
+                              "name": "Sayom, N. S.",
+                              "self": true
+                          },
+                          {
+                              "name": "Bhowmik, A."   
+                          }
+                      ],
+                      "codeRepository": "https://www.github.com/sayomshakib/opengaze",
+                      "doi": "https://doi.org/10.1145/3542954.3543027",
+                      "abstract": "Due to the increased volume of national, international, and even intercontinental transportations, it has been a critical responsibility for the road and transport authorities to ensure the safety of the transits. Bridges, in particular, require special maintenance because these are typically built in strategic locations, are more vulnerable to natural disasters, and can inflict more damage to life and property if collapsed. In addition to being expensive and time-consuming, manual structure health monitoring (SHM) is also error-prone, but this is still the standard practice in many countries, especially in Bangladesh. This paper presents a deep learning approach to detect cracks in concrete bridge surfaces from images using Dense Convolutional Network (DenseNet) with 99.83% detection accuracy to automate SHM, making it less expensive, efficient, and accurate.",
+                      "citation": "Nazia Alfaz, Abul Hasnat, ALVI MD. RAGIB NIHAL KHAN, Nazmus Shakib Sayom, and Abhijit Bhowmik. 2022. Bridge Crack Detection Using Dense Convolutional Network (DenseNet). In Proceedings of the 2nd International Conference on Computing Advancements (ICCA '22). Association for Computing Machinery, New York, NY, USA, 509–515. https://doi.org/10.1145/3542954.3543027"
+                  },
+                  {
+                      "Title": "Ocean Front Detection from SST Gradient in Bay of Bengal using UNet",
+                      "Authors": [
+                          {
+                              "name": "Mimon M."
+                          },
+                          {
+                              "name": "Hasnat, A., Khan"
+                          }
+                      ],
+                      "codeRepository": "https://github.com/nsssayom/ocean-unet",
+                      "doi": "https://doi.org/10.1145/3542954.3543027",
+                      "onGoing": true
+                  }
+              ]
+          }
+      },
+      {
+          "id": "projects",
+          "title": "Projects",
+          "titleIcon": "BsRocketTakeoff",
+          "content": {
+              "projects": [
+                  {
+                      "Title": "OpenGaze: Web Service for OpenFace ",
+                      "codeRepository": "github.com/nsssayom/opengaze",
+                      "web": "opengaze.io",
+                      "description": [
+                          "OpenFace is a fantastic tool intended for computer vision and machine learning researchers, the affective computing community, and people interested in building interactive applications based on facial behavior analysis. OpenGaze is a single endpoint RESTful web API service with HTTP Basic Authentication developed with FastAPI framework that uses the FaceLandmarkImg executable of OpenFace and provides a web API that responds with crucial eye-gaze and head-pose related fields."
+                      ],
+                      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjLom0NQue30oZvWGkjDBcJ0IBwr0d_6zxfA&usqp=CAU",
+                      "associatedSkills": [
+                          "Python",
+                          "FastAPI",
+                          "OpenFace",
+                          "Docker",
+                          "Git",
+                          "Jira",
+                          "Confluence",
+                          "Agile"
+                      ]
+                  },
+                  {
+                      "Title": "DePen: Handheld OCR and Word Defination",
+                      "codeRepository": "github.com/nsssayom/opengaze",
+                      "web": "opengaze.io",
+                      "description": [
+                          "OpenFace is a fantastic tool intended for computer vision and machine learning researchers, the affective computing community, and people interested in building interactive applications based on facial behavior analysis. OpenGaze is a single endpoint RESTful web API service with HTTP Basic Authentication developed with FastAPI framework that uses the FaceLandmarkImg executable of OpenFace and provides a web API that responds with crucial eye-gaze and head-pose related fields."
+                      ],
+                      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjLom0NQue30oZvWGkjDBcJ0IBwr0d_6zxfA&usqp=CAU",
+                      "associatedSkills": [
+                          "Python",
+                          "FastAPI",
+                          "OpenFace",
+                          "Docker",
+                          "Git",
+                          "Jira",
+                          "Confluence",
+                          "Agile"
+                      ]
+                  },
+                  {
+                      "Title": "Talk-E: 2.4 GHz non-licensed Spectrum Walkie-Talkie",
+                      "codeRepository": "github.com/nsssayom/opengaze",
+                      "web": "opengaze.io",
+                      "description": [
+                          "OpenFace is a fantastic tool intended for computer vision and machine learning researchers, the affective computing community, and people interested in building interactive applications based on facial behavior analysis. OpenGaze is a single endpoint RESTful web API service with HTTP Basic Authentication developed with FastAPI framework that uses the FaceLandmarkImg executable of OpenFace and provides a web API that responds with crucial eye-gaze and head-pose related fields."
+                      ],
+                      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjLom0NQue30oZvWGkjDBcJ0IBwr0d_6zxfA&usqp=CAU",
+                      "associatedSkills": [
+                          "Python",
+                          "FastAPI",
+                          "OpenFace",
+                          "Docker",
+                          "Git",
+                          "Jira",
+                          "Confluence",
+                          "Agile"
+                      ]
+                  }
+              ]
+          }
+      }
+  ]
+}
