@@ -1,5 +1,5 @@
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import About from '@/components/about';
 import Works from '@/components/Works';
 import Academics from '@/components/academics';
@@ -7,8 +7,13 @@ import Research from '@/components/Research';
 import Projects from '@/components/Projects';
 import Header from '@/components/common/Header';
 import Footer from '@/components/common/Footer';
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // Import AOS styles
+import Modal from '../Modal';
 
 const Layout = ({ children, data, activePage, setActivePage }) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const totalNavbarItems = data?.nav?.navMenus?.length;
 
   // Define the handleWheel function to be used as the wheel event listener
@@ -35,18 +40,29 @@ const Layout = ({ children, data, activePage, setActivePage }) => {
     };
   }, [activePage]); // Make sure to include activePage in the dependency array
 
+  useEffect(() => {
+    AOS.init({
+      duration: 350, // Animation duration in milliseconds
+      once: true, // Whether animations should only happen once while scrolling down
+    });
+  }, []);
+
+  const handleToggleModal = () => {
+    setIsModalOpen(!isModalOpen);
+  };
 
   return (
     <div className="flex flex-col h-screen font-mono select-none w-screen">
-      <Header data={data} activePage={activePage} setActivePage={setActivePage} />
-      <div className="flex-grow flex items-center justify-center px-40 bg-white">
+      <Header data={data} activePage={activePage} setActivePage={setActivePage} onToggleModal={handleToggleModal} />
+      <div className="flex-grow flex items-center justify-center px-20 lg:px-30 xl:px-40 bg-white">
         {activePage === 0 && <About data={data?.pages[activePage]} />}
         {activePage === 1 && <Works data={data?.pages[activePage]} />}
         {activePage === 2 && <Academics data={data?.pages[activePage]} />}
         {activePage === 3 && <Research data={data?.pages[activePage]} />}
         {activePage === 4 && <Projects data={data?.pages[activePage]} />}
       </div>
-      <Footer />
+      <Footer data={data} activePage={activePage} setActivePage={setActivePage} />
+      <Modal isOpen={isModalOpen} onClose={handleToggleModal} data={data} activePage={activePage} setActivePage={setActivePage} />
     </div>
   );
 };

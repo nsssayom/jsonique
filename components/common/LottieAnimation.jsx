@@ -1,7 +1,7 @@
 import { useRef, useEffect } from 'react';
 import lottie from 'lottie-web';
 
-const LottieAnimation = ({ animationData }) => {
+const LottieAnimation = ({ animationData, activePage, setActivePage }) => {
   const containerRef = useRef(null);
 
   useEffect(() => {
@@ -21,7 +21,7 @@ const LottieAnimation = ({ animationData }) => {
     };
   }, [animationData]);
 
-  return <div className="h-28 2xl:h-32" ref={containerRef}></div>;
+  return <div onClick={() => setActivePage(activePage + 1)} className="h-28 2xl:h-32" ref={containerRef}></div>;
 };
 
 export default LottieAnimation;

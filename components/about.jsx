@@ -19,7 +19,7 @@ export default function About({ data }) {
 
   return (
     <div className="grid grid-cols-7 gap-20">
-      <div className="col-span-4 flex flex-col items-start justify-center space-y-6 2xl:space-y-12">
+      <div data-aos="fade-right" className="col-span-7 lg:col-span-4 flex flex-col items-start justify-center space-y-6 2xl:space-y-12">
         <div className="flex flex-col leading-none">
           <span className="text-[28px] font-bold">{data?.content?.name}</span>
           <span className="text-[20px] font-normal ">
@@ -62,7 +62,7 @@ export default function About({ data }) {
           </button>
         </div>
       </div>
-      <div className="col-span-3 flex items-center justify-end">
+      <div data-aos="fade-left" className="lg:col-span-3 lg:flex items-center justify-center hidden">
         <Image src="/banner/banner1.png" alt="about" width={500} height={200} />
       </div>
     </div>
