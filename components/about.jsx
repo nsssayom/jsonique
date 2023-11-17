@@ -20,7 +20,7 @@ export default function About({ data }) {
   return (
     <div className="grid grid-cols-7 lg:gap-20 w-full">
       <div data-aos="fade-right" className="col-span-7 lg:col-span-4 flex flex-col items-start justify-center space-y-6 2xl:space-y-12">
-        <div className="flex flex-col leading-none">
+        <div className="sm:flex flex-col leading-none hidden">
           <span className="text-[28px] font-bold">{data?.content?.name}</span>
           <span className="text-[20px] font-normal ">
             {data?.content?.designation}
