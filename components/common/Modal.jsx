@@ -10,7 +10,7 @@ const Modal = ({ isOpen, onClose, data, activePage, setActivePage }) => {
   if (!isOpen) return null;
 
   return (
-    <div className={`fixed top-0 left-0 h-full bg-white p-4 w-[22rem] border-r border-gray-300 flex flex-col justify-between transition-transform duration-300 transform ${isOpen ? 'scale-100' : 'scale-0'}`}>
+    <div className={`fixed top-0 left-0 h-full bg-white p-4 w-[20rem] border-r border-gray-300 flex flex-col justify-between transition-transform duration-300 transform ${isOpen ? 'scale-100' : 'scale-0'}`}>
       <div className="flex flex-col space-y-10 ">
       <div  className="flex items-center justify-between">
         <h1 className="text-2xl font-bold">{data?.title}</h1>
