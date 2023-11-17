@@ -59,12 +59,12 @@ export default function Academics({ data }) {
                     >
                       <div className="text-sm 2xl:text-base font-normal space-y-1">
                         {research?.Authors && (
-                          <div className="flex items-center space-x-2">
+                          <div className="flex  space-x-2">
                             <RiTeamLine />
                             {research.Authors.map((author, index) => (
                               <span
                                 key={index}
-                                className={`${author?.self && "font-semibold"}`}
+                                className={`${author?.self && "font-semibold"} text-xs lg:text-lg`}
                               >
                                 {author.name}
                                 {index < research.Authors.length - 1
@@ -80,7 +80,7 @@ export default function Academics({ data }) {
                             <a
                               href={research?.codeRepository}
                               target="_blank"
-                              className="underline text-lg"
+                              className="underline text-xs lg:text-lg"
                             >
                               {research?.codeRepository}
                             </a>
@@ -92,7 +92,7 @@ export default function Academics({ data }) {
                             <a
                               href={research?.doi}
                               target="_blank"
-                              className="underline"
+                              className="underline text-xs lg:text-lg"
                             >
                               {research?.doi}
                             </a>

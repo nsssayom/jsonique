@@ -18,7 +18,7 @@ export default function About({ data }) {
   const IconComponentForResume = iconComponentMap[data?.content?.actionButton?.actionButtonIcon] || null;
 
   return (
-    <div className="grid grid-cols-7 gap-20">
+    <div className="grid grid-cols-7 lg:gap-20 w-full">
       <div data-aos="fade-right" className="col-span-7 lg:col-span-4 flex flex-col items-start justify-center space-y-6 2xl:space-y-12">
         <div className="flex flex-col leading-none">
           <span className="text-[28px] font-bold">{data?.content?.name}</span>
