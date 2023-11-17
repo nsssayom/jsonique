@@ -32,6 +32,7 @@ export default function About({ data }) {
             return (
               <div key={index} className="text-base sm:text-lg font-normal flex items-center space-x-2">
                 {IconComponent && <IconComponent />}
+                <div className="flex">
                 {infoItem?.infoText?.map((item, index) => (
                   <div key={index}>
                     {index > 0 && ", "}
@@ -44,6 +45,7 @@ export default function About({ data }) {
                     )}
                   </div>
                 ))}
+                </div>
               </div>
             );
           })}
