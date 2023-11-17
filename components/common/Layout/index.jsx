@@ -54,7 +54,7 @@ const Layout = ({ children, data, activePage, setActivePage }) => {
   return (
     <div className="flex flex-col h-screen font-mono select-none w-screen">
       <Header data={data} activePage={activePage} setActivePage={setActivePage} onToggleModal={handleToggleModal} />
-      <div className="flex-grow flex items-center justify-center px-20 lg:px-30 xl:px-40 bg-white">
+      <div className="flex-grow flex items-center justify-center px-5 sm:px-20 lg:px-30 xl:px-40 bg-white">
         {activePage === 0 && <About data={data?.pages[activePage]} />}
         {activePage === 1 && <Works data={data?.pages[activePage]} />}
         {activePage === 2 && <Academics data={data?.pages[activePage]} />}

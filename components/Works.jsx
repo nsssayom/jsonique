@@ -55,15 +55,64 @@ export default function Works({ data }) {
   const uniqueSkills = Array.from(uniqueSkillsMap.values());
 
   return (
-    <div className="space-y-20 h-full flex flex-col">
-      <div className="grid grid-cols-2 gap-20 grow">
+    <div className="lg:space-y-20 h-full flex flex-col w-full">
+      <div className="grid lg:grid-cols-2 lg:gap-20 grow">
         <div className="col-span-1 flex flex-col items-start justify-center space-y-6 2xl:space-y-12">
           <div className="flex flex-col leading-none w-full items-center justify-center space-y-8">
             <span className="flex items-center space-x-2 font-bold text-xl">
               <IconComponentForTitle />
               <span>{data?.title}</span>
             </span>
-            <div className="space-y-4 w-full flex flex-col items-center justify-center">
+          
+            <div className="w-full flex flex-col lg:hidden">
+              {data?.content?.experiences?.map((experience, index) => (
+                <div key={index} className="mb-4">
+                  <div
+                    className={`text-base font-normal flex items-center justify-between p-3 px-8 lg:rounded-3xl cursor-pointer ${
+                      index === selectedWork ? 'bg-zinc-200 text-black rounded-t-md' : 'bg-zinc-100 text-black rounded-md'
+                    }`}
+                    onClick={() => setSelectedWork(selectedWork === index ? null : index)}
+                  >
+                    {experience?.company ? (
+                      <div className="space-x-1">
+                        <span>{experience?.designation},</span>
+                        <span>{experience?.company?.name}</span>
+                      </div>
+                    ) : (
+                      experience?.designation
+                    )}
+                    <span>{selectedWork === index ? '🔽' : '🔼'}</span>
+                  </div>
+                  {selectedWork === index && (
+                    <div key={index} className="space-y-4 p-2 px-8 border border-zinc-200 rounded-b-md shadow-md">
+                      <div className="text-base font-normal space-y-1">
+                        {experience?.duration && (
+                          <div className="flex items-center space-x-1">
+                            <ImCalendar />
+                            <span>{experience?.duration}</span>
+                          </div>
+                        )}
+                        {experience?.location && (
+                          <div className="flex items-center space-x-1">
+                            <GrLocation />
+                            <span>{experience?.location}</span>
+                          </div>
+                        )}
+                      </div>
+                      <div className="text-base font-normal pl-5">
+                        <ul className="list-disc">
+                          {experience?.description?.map((line, index) => (
+                            <li key={index}>{line}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+
+            <div className="space-y-4 w-full lg:flex flex-col items-center justify-center hidden">
               {data?.content?.experiences?.map((experience, index) => (
                 <div
                   key={index}
@@ -86,7 +135,7 @@ export default function Works({ data }) {
             </div>
           </div>
         </div>
-        <div className="col-span-1 flex flex-col items-center justify-center space-y-12">
+        <div className="col-span-1 lg:flex flex-col items-center justify-center space-y-12 hidden">
           {data?.content?.experiences?.map(
             (experience, index) =>
               index === selectedWork && (
@@ -134,11 +183,11 @@ export default function Works({ data }) {
           )}
         </div>
       </div>
-      <div className="grid grid-cols-7 gap-4 text-center">
+      <div className="lg:grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-7 gap-2 lg:gap-4 text-center hidden">
         {uniqueSkills?.map((skill, index) => (
           <span
             key={index}
-            className={`p-1.5 rounded-md shadow-md ${skill.skillIndex.includes(selectedWork)
+            className={`p-1 lg:p-1.5 rounded-md shadow-md ${skill.skillIndex.includes(selectedWork)
               ? "bg-zinc-200 text-black"
               : "bg-zinc-100 text-black"
               }`}

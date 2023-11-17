@@ -2,6 +2,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCodeCompare, faLinkedin, faFile } from '@fortawesome/free-solid-svg-icons'
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { GiHamburgerMenu } from "react-icons/gi";
+import { SiGooglescholar } from "react-icons/si";
 
 const Header = ({ data, activePage, setActivePage, onToggleModal }) => {
 
@@ -13,8 +14,8 @@ const Header = ({ data, activePage, setActivePage, onToggleModal }) => {
 
   return (
     <header className=" text-black bg-gradient-to-b to-white from-[#EBEBEB]">
-      <div className="flex justify-between items-center h-[55px] px-20">
-        <h1 className="text-3xl font-bold">{data?.title}</h1>
+      <div className="flex justify-between items-center h-[55px] px-5 sm:px-20">
+        <h1 className="text-2xl sm:text-3xl font-bold">{data?.title}</h1>
         <nav className='hidden lg:block'>
           <ul className="flex space-x-6">
             {data?.nav?.navMenus?.map((item, index) => (
@@ -36,7 +37,7 @@ const Header = ({ data, activePage, setActivePage, onToggleModal }) => {
             <a key={index} href={link.url} className="text-2xl flex items-center">
               {link.name === 'github' && <FaGithub />}
               {link.name === 'linkedin' && <FaLinkedin />}
-              {link.name === 'resume' && <FontAwesomeIcon icon={faFile} />}
+              {link.name === 'scholar' && <SiGooglescholar />}
             </a>
           ))}
         </div>
