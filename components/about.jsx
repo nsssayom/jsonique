@@ -30,7 +30,7 @@ export default function About({ data }) {
           {data?.content?.info?.map((infoItem, index) => {
             const IconComponent = iconComponentMap[infoItem.infoIcon] || null;
             return (
-              <div key={index} className="text-lg font-normal flex items-center space-x-2">
+              <div key={index} className="text-base sm:text-lg font-normal flex items-center space-x-2">
                 {IconComponent && <IconComponent />}
                 {infoItem?.infoText?.map((item, index) => (
                   <div key={index}>
@@ -48,7 +48,7 @@ export default function About({ data }) {
             );
           })}
         </div>
-        <div className={`text-base font-normal text-justify ${data?.content?.description?.length > 1 ? 'space-y-2 2x:space-y-4' : ''}`}>
+        <div className={`text-sm sm:text-base font-normal text-justify ${data?.content?.description?.length > 1 ? 'space-y-2 2x:space-y-4' : ''}`}>
           {data?.content?.description.map((line, index) => (
             <div key={index}>
               {line}
