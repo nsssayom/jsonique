@@ -18,7 +18,7 @@ export default function About({ data }) {
   const IconComponentForResume = iconComponentMap[data?.content?.actionButton?.actionButtonIcon] || null;
 
   return (
-    <div className="grid grid-cols-7 lg:gap-20 w-full">
+    <div className="grid grid-cols-7 lg:gap-20 w-full pt-32 sm:pt-0">
       <div data-aos="fade-right" className="col-span-7 lg:col-span-4 flex flex-col items-start justify-center space-y-6 2xl:space-y-12">
         <div className="flex flex-col leading-none">
           <span className="text-[28px] font-bold">{data?.content?.name}</span>
@@ -33,18 +33,18 @@ export default function About({ data }) {
               <div key={index} className="text-base sm:text-lg font-normal flex items-center space-x-2">
                 {IconComponent && <IconComponent />}
                 <div className="flex">
-                {infoItem?.infoText?.map((item, index) => (
-                  <div key={index}>
-                    {index > 0 && ", "}
-                    {item.link ? (
-                      <a href={item.link} target="_blank" rel="noopener noreferrer">
-                        {item.text}
-                      </a>
-                    ) : (
-                      <span>{item.text}</span>
-                    )}
-                  </div>
-                ))}
+                  {infoItem?.infoText?.map((item, index) => (
+                    <div key={index}>
+                      {index > 0 && ", "}
+                      {item.link ? (
+                        <a href={item.link} target="_blank" rel="noopener noreferrer">
+                          {item.text}
+                        </a>
+                      ) : (
+                        <span>{item.text}</span>
+                      )}
+                    </div>
+                  ))}
                 </div>
               </div>
             );

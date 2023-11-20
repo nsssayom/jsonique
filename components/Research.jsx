@@ -28,7 +28,7 @@ export default function Academics({ data }) {
   const IconComponentForTitle = iconComponentMap[data?.titleIcon] || null;
 
   return (
-    <div className="space-y-20 h-full flex flex-col w-full">
+    <div className="space-y-20 h-full flex flex-col w-full pt-16 sm:pt-0">
       <div className="grid lg:grid-cols-2 lg:gap-20 grow">
         <div className="col-span-1 flex flex-col items-start justify-center space-y-6 2xl:space-y-12">
           <div className="flex flex-col leading-none w-full items-center justify-center space-y-8">
@@ -42,11 +42,10 @@ export default function Academics({ data }) {
                 <div key={index} className="mb-4">
                   <div
                     key={index}
-                    className={`text-base font-normal flex items-center justify-between text-center p-3 px-8 w-full cursor-pointer ${
-                      index === selectedWork
+                    className={`text-base font-normal flex items-center justify-between text-center p-3 px-8 w-full cursor-pointer ${index === selectedWork
                         ? "bg-zinc-200 text-black rounded-t-md"
                         : "bg-zinc-100 text-black rounded-md shadow-md"
-                    }`}
+                      }`}
                     onClick={() => setSelectedWork(index)}
                   >
                     {research?.Title && research?.Title}
@@ -133,11 +132,10 @@ export default function Academics({ data }) {
               {data?.content?.research?.map((research, index) => (
                 <div
                   key={index}
-                  className={`text-base font-normal flex items-center justify-center text-center p-3 w-full rounded-3xl shadow-md cursor-pointer ${
-                    index === selectedWork
+                  className={`text-base font-normal flex items-center justify-center text-center p-3 w-full rounded-3xl shadow-md cursor-pointer ${index === selectedWork
                       ? "bg-zinc-200 text-black"
                       : "bg-zinc-100 text-black"
-                  }`}
+                    }`}
                   onClick={() => setSelectedWork(index)}
                 >
                   {research?.Title && research?.Title}

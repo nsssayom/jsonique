@@ -13,7 +13,7 @@ const Header = ({ data, activePage, setActivePage, onToggleModal }) => {
   };
 
   return (
-    <header className=" text-black bg-gradient-to-b to-white from-[#EBEBEB]">
+    <header className=" text-black bg-gradient-to-b to-white from-[#EBEBEB] fixed sm:static w-full">
       <div className="flex justify-between items-center h-[55px] px-5 sm:px-20">
         <h1 className="text-2xl sm:text-3xl font-bold">{data?.title}</h1>
         <nav className='hidden lg:block'>
@@ -44,7 +44,7 @@ const Header = ({ data, activePage, setActivePage, onToggleModal }) => {
       </div>
       <div
         className="h-[10px] bg-[#e3c1e8] hidden lg:block"
-        style={{ width: `${progressBarWidth}%`,  transition: "width 0.3s ease-in-out", }}
+        style={{ width: `${progressBarWidth}%`, transition: "width 0.3s ease-in-out", }}
       />
     </header>
   );
