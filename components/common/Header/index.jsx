@@ -3,19 +3,40 @@ import { faCodeCompare, faLinkedin, faFile } from '@fortawesome/free-solid-svg-i
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { GiHamburgerMenu } from "react-icons/gi";
 import { SiGooglescholar } from "react-icons/si";
+import { useState, useEffect } from 'react';
 
 const Header = ({ data, activePage, setActivePage, onToggleModal }) => {
 
   const progressBarWidth = (100 / data?.nav?.navMenus?.length) * (activePage + 1); // Calculate progress
+  const [showTitle, setShowTitle] = useState(false);
 
   const handleNavItemClick = (index) => {
     setActivePage(index);
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      const scrollThreshold = 42; // Adjust this value to change when the title appears
+
+      if (scrollPosition > scrollThreshold) {
+        setShowTitle(true);
+      } else {
+        setShowTitle(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
     <header className=" text-black bg-gradient-to-b to-white from-[#EBEBEB] fixed sm:static w-full">
       <div className="flex justify-between items-center h-[55px] px-5 sm:px-20">
-        <h1 className="text-2xl sm:text-3xl font-bold">{data?.title}</h1>
+        <h1 className="text-2xl sm:text-3xl font-bold sm:hidden">{showTitle && data?.title}</h1>
+        <h1 className="text-2xl sm:text-3xl font-bold hidden sm:block">{data?.title}</h1>
         <nav className='hidden lg:block'>
           <ul className="flex space-x-6">
             {data?.nav?.navMenus?.map((item, index) => (

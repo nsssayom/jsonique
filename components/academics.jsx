@@ -7,6 +7,8 @@ import { ImCalendar } from "react-icons/im";
 import { useState } from "react";
 import { GiGraduateCap } from "react-icons/gi";
 import { PiNotebook } from "react-icons/pi";
+import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
+
 
 export default function Academics({ data }) {
   const [selectedWork, setSelectedWork] = useState(0);
@@ -53,12 +55,12 @@ export default function Academics({ data }) {
                     ) : (
                       education?.degree
                     )}
-                    <span>{selectedWork === index ? "🔽" : "🔼"}</span>
+                    <span className=" text-xl">{selectedWork === index ? <IoIosArrowDown /> : <IoIosArrowUp />}</span>
                   </div>
                   {selectedWork === index && (
                     <div
                       key={index}
-                      className="space-y-4 p-2 px-8 border border-zinc-200 rounded-b-md shadow-md"
+                      className="space-y-4 p-8 border border-zinc-200 rounded-b-md shadow-md"
                     >
                       <div className="text-sm 2xl:text-base font-normal space-y-1">
                         {education?.duration && (

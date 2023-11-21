@@ -2,6 +2,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import About from '@/components/about';
 import Works from '@/components/Works';
+import Skills from '@/components/skills';
 import Academics from '@/components/academics';
 import Research from '@/components/Research';
 import Projects from '@/components/Projects';
@@ -15,6 +16,7 @@ const Layout = ({ children, data, activePage, setActivePage }) => {
 
   const aboutRef = useRef(null);
   const worksRef = useRef(null);
+  const skillsRef = useRef(null);
   const academicsRef = useRef(null);
   const researchRef = useRef(null);
   const projectsRef = useRef(null);
@@ -78,12 +80,15 @@ const Layout = ({ children, data, activePage, setActivePage }) => {
         {activePage === 3 && <Research data={data?.pages[activePage]} />}
         {activePage === 4 && <Projects data={data?.pages[activePage]} />}
       </div>
-      <div className="flex flex-col items-center justify-center  px-5 sm:px-20 lg:px-30 xl:px-40 bg-white sm:hidden">
+      <div className="flex flex-col items-center justify-center  px-10 sm:px-20 lg:px-30 xl:px-40 bg-white sm:hidden">
         <div ref={aboutRef}>
           <About data={data.pages[0]} />
         </div>
         <div ref={worksRef}>
           <Works data={data.pages[1]} />
+        </div>
+        <div ref={skillsRef} className="sm:hidden">
+          <Skills data={data.pages[1]} />
         </div>
         <div ref={academicsRef}>
           <Academics data={data.pages[2]} />
@@ -96,7 +101,8 @@ const Layout = ({ children, data, activePage, setActivePage }) => {
         </div>
       </div>
       <div className="hidden sm:block"><Footer data={data} activePage={activePage} setActivePage={setActivePage} /></div>
-      <Modal isOpen={isModalOpen} onClose={handleToggleModal} data={data} activePage={activePage} setActivePage={setActivePage} aboutRef={aboutRef} worksRef={worksRef} academicsRef={academicsRef} researchRef={researchRef} projectsRef={projectsRef} scrollToRef={scrollToRef} />
+      <div className='lg:hidden'>    <Modal isOpen={isModalOpen} onClose={handleToggleModal} data={data} activePage={activePage} setActivePage={setActivePage} aboutRef={aboutRef} worksRef={worksRef} skillsRef={skillsRef} academicsRef={academicsRef} researchRef={researchRef} projectsRef={projectsRef} scrollToRef={scrollToRef} />
+</div>
     </div>
   );
 };

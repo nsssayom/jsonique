@@ -6,7 +6,7 @@ import { faCodeCompare, faLinkedin, faFile } from '@fortawesome/free-solid-svg-i
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { SiGooglescholar } from "react-icons/si";
 
-const Modal = ({ isOpen, onClose, data, activePage, setActivePage, aboutRef, worksRef, academicsRef, researchRef, projectsRef, scrollToRef }) => {
+const Modal = ({ isOpen, onClose, data, activePage, setActivePage, aboutRef, worksRef, skillsRef, academicsRef, researchRef, projectsRef, scrollToRef }) => {
   if (!isOpen) return null;
 
   return (
@@ -18,7 +18,7 @@ const Modal = ({ isOpen, onClose, data, activePage, setActivePage, aboutRef, wor
         </div>
         <nav>
           <ul className="flex flex-col space-y-5">
-            {data?.nav?.navMenus?.map((item, index) => (
+            {/* {data?.nav?.navMenus?.map((item, index) => (
               <li key={index} className="text-base">
                 <button
                   className={`${index === activePage ? 'font-bold' : 'font-normal'
@@ -51,7 +51,78 @@ const Modal = ({ isOpen, onClose, data, activePage, setActivePage, aboutRef, wor
                   {item.name}
                 </button>
               </li>
-            ))}
+            ))} */}
+            {data?.nav?.navMenus?.map((item, index) => {
+  if (index < 2) {
+    return (
+      <li key={index} className="text-base">
+        <button
+          className={`${index === activePage ? 'font-bold' : 'font-normal'}`}
+          onClick={() => {
+            onClose();
+            setActivePage(index);
+            switch (index) {
+              case 0:
+                scrollToRef(aboutRef);
+                break;
+              case 1:
+                scrollToRef(worksRef);
+                break;
+              default:
+                break;
+            }
+          }}
+        >
+          {item.name}
+        </button>
+      </li>
+    );
+  }
+  return null; // Render nothing for indices other than 0 and 1
+})}
+      <li className="text-base lg:hidden">
+        <button
+          // className={`${index === activePage ? 'font-bold' : 'font-normal'}`}
+          onClick={() => {
+            onClose();
+            // setActivePage(index);
+            scrollToRef(skillsRef);
+          }}
+        >
+          Skills
+        </button>
+      </li>
+            {data?.nav?.navMenus?.map((item, index) => {
+  if (index > 1) {
+    return (
+      <li key={index} className="text-base">
+        <button
+          className={`${index === activePage ? 'font-bold' : 'font-normal'}`}
+          onClick={() => {
+            onClose();
+            setActivePage(index);
+            switch (index) {
+              case 2:
+                scrollToRef(academicsRef);
+                break;
+              case 3:
+                scrollToRef(researchRef);
+                break;
+              case 4:
+                scrollToRef(projectsRef);
+                break;
+              default:
+                break;
+            }
+          }}
+        >
+          {item.name}
+        </button>
+      </li>
+    );
+  }
+  return null; // Render nothing for indices other than 0 and 1
+})}
           </ul>
         </nav>
       </div>

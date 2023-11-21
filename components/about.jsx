@@ -18,9 +18,9 @@ export default function About({ data }) {
   const IconComponentForResume = iconComponentMap[data?.content?.actionButton?.actionButtonIcon] || null;
 
   return (
-    <div className="grid grid-cols-7 lg:gap-20 w-full pt-32 sm:pt-0">
+    <div className="grid grid-cols-7 lg:gap-20 w-full pt-16 sm:pt-0">
       <div data-aos="fade-right" className="col-span-7 lg:col-span-4 flex flex-col items-start justify-center space-y-6 2xl:space-y-12">
-        <div className="flex flex-col leading-none">
+        <div className="flex flex-col">
           <span className="text-[28px] font-bold">{data?.content?.name}</span>
           <span className="text-[20px] font-normal ">
             {data?.content?.designation}
@@ -50,7 +50,7 @@ export default function About({ data }) {
             );
           })}
         </div>
-        <div className={`text-sm sm:text-base font-normal text-justify ${data?.content?.description?.length > 1 ? 'space-y-2 2x:space-y-4' : ''}`}>
+        <div className={`text-sm sm:text-base font-normal ${data?.content?.description?.length > 1 ? 'space-y-2 2x:space-y-4' : ''}`}>
           {data?.content?.description.map((line, index) => (
             <div key={index}>
               {line}
@@ -58,10 +58,10 @@ export default function About({ data }) {
           ))}
         </div>
         <div className="flex flex-col leading-none">
-          <button className="text-lg font-semibold flex items-center justify-center space-x-2 h-10 bg-gray-200 hover:bg-gray-300 hover:scale-95 transition duration-700 ease-in-out rounded-3xl px-5">
+          <a href={data?.content?.actionButton?.link} target="_blank" className="text-lg font-semibold flex items-center justify-center space-x-2 h-10 bg-gray-200 hover:bg-gray-300 hover:scale-95 transition duration-700 ease-in-out rounded-3xl px-5">
             <span>{IconComponentForResume && <IconComponentForResume />}</span>
             <span>{data?.content?.actionButton?.text}</span>
-          </button>
+          </a>
         </div>
       </div>
       <div data-aos="fade-left" className="lg:col-span-3 lg:flex items-center justify-center hidden">

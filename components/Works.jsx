@@ -5,6 +5,7 @@ import { GrLocation } from "react-icons/gr";
 import { LiaDiscord } from "react-icons/lia";
 import { ImCalendar } from "react-icons/im";
 import { useState } from "react";
+import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 
 export default function Works({ data }) {
   const [selectedWork, setSelectedWork] = useState(0);
@@ -80,11 +81,11 @@ export default function Works({ data }) {
                     ) : (
                       experience?.designation
                     )}
-                    <span>{selectedWork === index ? '🔽' : '🔼'}</span>
+                    <span className=" text-xl">{selectedWork === index ? <IoIosArrowDown /> : <IoIosArrowUp />}</span>
                   </div>
                   {selectedWork === index && (
-                    <div key={index} className="space-y-4 p-2 px-8 border border-zinc-200 rounded-b-md shadow-md">
-                      <div className="text-base font-normal space-y-1">
+                    <div key={index} className="space-y-4 p-8 border border-zinc-200 rounded-b-md shadow-md">
+                      <div className="text-sm font-normal space-y-1">
                         {experience?.duration && (
                           <div className="flex items-center space-x-1">
                             <ImCalendar />
@@ -98,7 +99,7 @@ export default function Works({ data }) {
                           </div>
                         )}
                       </div>
-                      <div className="text-base font-normal pl-5">
+                      <div className="text-sm font-normal pl-5">
                         <ul className="list-disc">
                           {experience?.description?.map((line, index) => (
                             <li key={index}>{line}</li>

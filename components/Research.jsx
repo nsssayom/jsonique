@@ -3,11 +3,12 @@ import { BsTelephone, BsDownload, BsBook } from "react-icons/bs";
 import { BiEnvelope, BiBriefcase, BiCodeAlt } from "react-icons/bi";
 import { GrLocation } from "react-icons/gr";
 import { LiaDiscord } from "react-icons/lia";
-import { ImCalendar } from "react-icons/im";
+import { GoBook } from "react-icons/go";
 import { useState } from "react";
 import { GiGraduateCap, GiArchiveResearch, GiOpenBook } from "react-icons/gi";
 import { PiNotebook } from "react-icons/pi";
 import { RiTeamLine } from "react-icons/ri";
+import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 
 export default function Academics({ data }) {
   const [selectedWork, setSelectedWork] = useState(0);
@@ -42,40 +43,56 @@ export default function Academics({ data }) {
                 <div key={index} className="mb-4">
                   <div
                     key={index}
-                    className={`text-base font-normal flex items-center justify-between text-center p-3 px-8 w-full cursor-pointer ${index === selectedWork
+                    className={`text-base font-normal flex items-center justify-between text-center p-3 px-8 w-full cursor-pointer  ${
+                      index === selectedWork
                         ? "bg-zinc-200 text-black rounded-t-md"
                         : "bg-zinc-100 text-black rounded-md shadow-md"
-                      }`}
+                    }`}
                     onClick={() => setSelectedWork(index)}
                   >
-                    {research?.Title && research?.Title}
-                    <span>{selectedWork === index ? "🔽" : "🔼"}</span>
+                    <span className="line-clamp-2">
+                      {research?.Title && research?.Title}
+                    </span>
+                    <span className="text-xl">
+                      {selectedWork === index ? (
+                        <IoIosArrowDown />
+                      ) : (
+                        <IoIosArrowUp />
+                      )}
+                    </span>
                   </div>
                   {selectedWork === index && (
                     <div
                       key={index}
-                      className="space-y-4 p-2 px-8 border border-zinc-200 rounded-b-md shadow-md"
+                      className="space-y-4 p-8 border border-zinc-200 rounded-b-md shadow-md"
                     >
+                                          {research?.Title && (
+                      <div className="font-semibold">{research?.Title}</div>
+                    )}
                       <div className="text-sm 2xl:text-base font-normal space-y-1">
                         {research?.Authors && (
-                          <div className="flex  space-x-2">
-                            <RiTeamLine />
-                            {research.Authors.map((author, index) => (
-                              <span
-                                key={index}
-                                className={`${author?.self && "font-semibold"} text-xs lg:text-lg`}
-                              >
-                                {author.name}
-                                {index < research.Authors.length - 1
-                                  ? ", "
-                                  : ""}
-                              </span>
-                            ))}
+                          <div className="flex space-x-2">
+                            <RiTeamLine className="pt-1 text-lg" />
+                            <span className="">
+                              {research.Authors.map((author, index) => (
+                                <span
+                                  key={index}
+                                  className={`${
+                                    author?.self && "font-semibold"
+                                  } text-xs lg:text-lg`}
+                                >
+                                  {author.name}
+                                  {index < research.Authors.length - 1
+                                    ? ", "
+                                    : ""}
+                                </span>
+                              ))}
+                            </span>
                           </div>
                         )}
                         {research?.codeRepository && (
-                          <div className="flex items-center space-x-2">
-                            <BiCodeAlt />
+                          <div className="flex items-center space-x-1">
+                            <BiCodeAlt className="text-lg" />
                             <a
                               href={research?.codeRepository}
                               target="_blank"
@@ -87,7 +104,7 @@ export default function Academics({ data }) {
                         )}
                         {research?.doi && (
                           <div className="flex items-center space-x-2">
-                            <GiOpenBook />
+                            <GoBook className="text-base" />
                             <a
                               href={research?.doi}
                               target="_blank"
@@ -108,7 +125,7 @@ export default function Academics({ data }) {
                             <h2 className="text-sm 2xl:text-base font-semibold">
                               Abstract
                             </h2>
-                            <div className="text-justify text-xs 2xl:text-sm">
+                            <div className="text-xs 2xl:text-sm line-clamp-[10]">
                               {research?.abstract}
                             </div>
                           </div>
@@ -116,7 +133,7 @@ export default function Academics({ data }) {
                             <h2 className="text-sm 2xl:text-base font-semibold">
                               To Cite
                             </h2>
-                            <div className="text-justify text-xs 2xl:text-sm">
+                            <div className="text-xs 2xl:text-sm">
                               {research?.citation}
                             </div>
                           </div>
@@ -132,10 +149,11 @@ export default function Academics({ data }) {
               {data?.content?.research?.map((research, index) => (
                 <div
                   key={index}
-                  className={`text-base font-normal flex items-center justify-center text-center p-3 w-full rounded-3xl shadow-md cursor-pointer ${index === selectedWork
+                  className={`text-base font-normal flex items-center justify-center text-center p-3 w-full rounded-3xl shadow-md cursor-pointer ${
+                    index === selectedWork
                       ? "bg-zinc-200 text-black"
                       : "bg-zinc-100 text-black"
-                    }`}
+                  }`}
                   onClick={() => setSelectedWork(index)}
                 >
                   {research?.Title && research?.Title}
@@ -202,7 +220,7 @@ export default function Academics({ data }) {
                         <h2 className="text-sm 2xl:text-base font-semibold">
                           Abstract
                         </h2>
-                        <div className="text-justify text-xs 2xl:text-sm">
+                        <div className=" text-xs 2xl:text-sm">
                           {research?.abstract}
                         </div>
                       </div>
@@ -210,7 +228,7 @@ export default function Academics({ data }) {
                         <h2 className="text-sm 2xl:text-base font-semibold">
                           To Cite
                         </h2>
-                        <div className="text-justify text-xs 2xl:text-sm">
+                        <div className=" text-xs 2xl:text-sm">
                           {research?.citation}
                         </div>
                       </div>

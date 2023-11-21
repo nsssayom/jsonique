@@ -8,6 +8,7 @@ import { useState } from "react";
 import { GiGraduateCap, GiWorld } from "react-icons/gi";
 import { PiNotebook } from "react-icons/pi";
 import { TbWorld } from "react-icons/tb";
+import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 
 export default function Academics({ data }) {
   const [selectedWork, setSelectedWork] = useState(0);
@@ -47,11 +48,11 @@ export default function Academics({ data }) {
                   onClick={() => setSelectedWork(index)}
                 >
                   {project?.Title && project?.Title}
-                  <span>{selectedWork === index ? "🔽" : "🔼"}</span>
+                  <span className=" text-xl">{selectedWork === index ? <IoIosArrowDown /> : <IoIosArrowUp />}</span>
                 </div>
                 {selectedWork === index && (
 
-                  <div key={index} className="space-y-4 p-2 px-8 border border-zinc-200 rounded-b-md shadow-md">
+                  <div key={index} className="space-y-4 p-8 border border-zinc-200 rounded-b-md shadow-md">
                     {project?.Title && (
                       <div className="font-semibold">{project?.Title}</div>
                     )}
@@ -74,31 +75,42 @@ export default function Academics({ data }) {
                           <a
                             href={project?.web}
                             target="_blank"
-                            className="underline text-lg"
+                            className="underline"
                           >
                             {project?.web}
                           </a>
                         </div>
                       )}
                     </div>
-                    <div className="text-justify text-xs 2xl:text-sm">{project?.description && project?.description}</div>
+                    <div className="text-xs 2xl:text-sm line-clamp-5">{project?.description && project?.description}</div>
                     {project?.image && (
                       <Image
                         src={project?.image}
                         alt="Project Image"
                         height={200}
                         width={200}
-                        className="h-40"
+                        className="h-auto w-full"
                       />
+                    //   <div style={{ position: 'relative', width: '300px', height: '300px' }}>
+                    //   <Image
+                    //     src={project?.image}
+                    //     alt="Picture of the author"
+                    //     sizes="300px"
+                    //     fill
+                    //     style={{
+                    //       objectFit: 'contain',
+                    //     }}
+                    //   />
+                    // </div>
                     )}
                     {project?.associatedSkills && (
-                      <div className="grid grid-cols-4 gap-4 text-center">
+                      <div className="flex flex-wrap gap-5">
                         {project?.associatedSkills?.map((skill, index) => (
                           <span
                             key={index}
-                            className={`p-1 2xl:p-1.5 rounded-md shadow-md bg-zinc-100 text-black text-sm`}
+                            className={`  text-black text-sm`}
                           >
-                            {skill}
+                            <span className="bg-zinc-100 p-2 2xl:p-2.5 rounded-md shadow-md">{skill}</span>
                           </span>
                         ))}
                       </div>
@@ -159,18 +171,18 @@ export default function Academics({ data }) {
                     </div>
                   )}
                 </div>
-                <div className="text-justify text-xs 2xl:text-sm">{project?.description && project?.description}</div>
+                <div className=" text-xs 2xl:text-sm">{project?.description && project?.description}</div>
                 {project?.image && (
-                  <Image
-                    src={project?.image}
-                    alt="Project Image"
-                    height={200}
-                    width={200}
-                    className="h-40"
-                  />
+                      <Image
+                      src={project?.image}
+                      alt="Project Image"
+                      height={600}
+                      width={600}
+                      className="h-auto w-full"
+                    />
                 )}
                 {project?.associatedSkills && (
-                  <div className="grid grid-cols-4 gap-4 text-center">
+                  <div className="grid grid-cols-3 2xl:grid-cols-4 gap-3 text-center">
                     {project?.associatedSkills?.map((skill, index) => (
                       <span
                         key={index}
