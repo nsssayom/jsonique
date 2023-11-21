@@ -60,16 +60,16 @@ export default function Works({ data }) {
       <div className="grid lg:grid-cols-2 lg:gap-20 grow">
         <div className="col-span-1 flex flex-col items-start justify-center space-y-6 2xl:space-y-12">
           <div className="flex flex-col leading-none w-full items-center justify-center space-y-8">
-            <span className="flex items-center space-x-2 font-bold text-xl">
-              <span><IconComponentForTitle /></span>
-              <span>{data?.title}</span>
+            <span className="flex items-center space-x-2">
+              <IconComponentForTitle className="text-xl" />
+              <span className="text-lg font-bold lg:text-xl">{data?.title}</span>
             </span>
 
             <div className="w-full flex flex-col lg:hidden">
               {data?.content?.experiences?.map((experience, index) => (
                 <div key={index} className="mb-4">
                   <div
-                    className={`text-base font-normal flex items-center justify-between p-3 px-8 lg:rounded-3xl cursor-pointer ${index === selectedWork ? 'bg-zinc-200 text-black rounded-t-md' : 'bg-zinc-100 text-black rounded-md'
+                    className={`text-base font-normal flex items-center justify-between p-3 px-8 lg:rounded-3xl cursor-pointer space-x-2 ${index === selectedWork ? 'bg-zinc-200 text-black rounded-t-md' : 'bg-zinc-100 text-black rounded-md'
                       }`}
                     onClick={() => setSelectedWork(index)}
                   >
