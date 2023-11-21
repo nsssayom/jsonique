@@ -61,7 +61,7 @@ export default function Works({ data }) {
         <div className="col-span-1 flex flex-col items-start justify-center space-y-6 2xl:space-y-12">
           <div className="flex flex-col leading-none w-full items-center justify-center space-y-8">
             <span className="flex items-center space-x-2 font-bold text-xl">
-              <IconComponentForTitle />
+              <span><IconComponentForTitle /></span>
               <span>{data?.title}</span>
             </span>
 
@@ -71,7 +71,7 @@ export default function Works({ data }) {
                   <div
                     className={`text-base font-normal flex items-center justify-between p-3 px-8 lg:rounded-3xl cursor-pointer ${index === selectedWork ? 'bg-zinc-200 text-black rounded-t-md' : 'bg-zinc-100 text-black rounded-md'
                       }`}
-                    onClick={() => setSelectedWork(selectedWork === index ? null : index)}
+                    onClick={() => setSelectedWork(index)}
                   >
                     {experience?.company ? (
                       <div className="space-x-1">

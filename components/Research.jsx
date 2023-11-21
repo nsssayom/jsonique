@@ -72,7 +72,7 @@ export default function Academics({ data }) {
                       <div className="text-sm 2xl:text-base font-normal space-y-1">
                         {research?.Authors && (
                           <div className="flex space-x-2">
-                            <RiTeamLine className="pt-1 text-lg" />
+                            <RiTeamLine className="text-lg" />
                             <span className="">
                               {research.Authors.map((author, index) => (
                                 <span
@@ -98,7 +98,8 @@ export default function Academics({ data }) {
                               target="_blank"
                               className="underline text-xs lg:text-lg"
                             >
-                              {research?.codeRepository}
+                              {/* {research?.codeRepository} */}
+                              Github
                             </a>
                           </div>
                         )}
@@ -110,7 +111,8 @@ export default function Academics({ data }) {
                               target="_blank"
                               className="underline text-xs lg:text-lg"
                             >
-                              {research?.doi}
+                              {/* {research?.doi} */}
+                              DOI
                             </a>
                           </div>
                         )}

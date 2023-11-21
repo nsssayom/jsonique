@@ -34,7 +34,7 @@ const Header = ({ data, activePage, setActivePage, onToggleModal }) => {
 
   return (
     <header className=" text-black bg-gradient-to-b to-white from-[#EBEBEB] fixed sm:static w-full">
-      <div className="flex justify-between items-center h-[55px] px-5 sm:px-20">
+      <div className="flex justify-between items-center h-[55px] px-8 sm:px-20">
         <h1 className="text-2xl sm:text-3xl font-bold sm:hidden">{showTitle && data?.title}</h1>
         <h1 className="text-2xl sm:text-3xl font-bold hidden sm:block">{data?.title}</h1>
         <nav className='hidden lg:block'>
