@@ -41,12 +41,13 @@ export default function Academics({ data }) {
                 <div key={index} className="mb-4">
                   <div
                     key={index}
-                    className={`text-base font-normal flex items-center justify-between text-center p-3 px-8 w-full cursor-pointer space-x-2 ${index === selectedWork
+                    className={`text-base font-normal flex items-center justify-between text-center p-3 px-5 w-full cursor-pointer space-x-2 ${index === selectedWork
                         ? "bg-zinc-200 text-black rounded-t-md"
                         : "bg-zinc-100 text-black rounded-md shadow-md"
                       }`}
                     onClick={() => setSelectedWork(index)}
                   >
+                    <div className="line-clamp-2">
                     {education?.institute ? (
                       <div className="space-x-1">
                         <span>{education?.degree},</span>
@@ -54,13 +55,13 @@ export default function Academics({ data }) {
                       </div>
                     ) : (
                       education?.degree
-                    )}
+                    )}</div>
                     <span className=" text-xl">{selectedWork === index ? <IoIosArrowDown /> : <IoIosArrowUp />}</span>
                   </div>
                   {selectedWork === index && (
                     <div
                       key={index}
-                      className="space-y-4 p-8 border border-zinc-200 rounded-b-md shadow-md"
+                      className="space-y-4 p-5 border border-zinc-200 rounded-b-md shadow-md"
                     >
                       <div className="text-sm 2xl:text-base font-normal space-y-1">
                         {education?.duration && (

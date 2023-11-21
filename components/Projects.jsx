@@ -33,7 +33,7 @@ export default function Academics({ data }) {
         <div className="flex flex-col leading-none w-full items-center justify-center space-y-8">
           <span className="flex items-center space-x-2">
             <IconComponentForTitle className="text-lg lg:text-xl" />
-              <span className="text-lg font-bold lg:text-xl">{data?.title}</span>
+            <span className="text-lg font-bold lg:text-xl">{data?.title}</span>
           </span>
 
           <div className="w-full flex flex-col lg:hidden">
@@ -41,18 +41,29 @@ export default function Academics({ data }) {
               <div key={index} className="mb-4">
                 <div
                   key={index}
-                  className={`text-base font-normal flex items-center justify-between text-center p-3 px-8 w-full cursor-pointer space-x-2 ${index === selectedWork
+                  className={`text-base font-normal flex items-center justify-between text-center p-3 px-5 w-full cursor-pointer space-x-2 ${
+                    index === selectedWork
                       ? "bg-zinc-200 text-black rounded-t-md"
                       : "bg-zinc-100 text-black rounded-md shadow-md"
-                    }`}
+                  }`}
                   onClick={() => setSelectedWork(index)}
                 >
-                  {project?.Title && project?.Title}
-                  <span className=" text-xl">{selectedWork === index ? <IoIosArrowDown /> : <IoIosArrowUp />}</span>
+                  <span className="line-clamp-2">
+                    {project?.Title && project?.Title}
+                  </span>
+                  <span className=" text-xl">
+                    {selectedWork === index ? (
+                      <IoIosArrowDown />
+                    ) : (
+                      <IoIosArrowUp />
+                    )}
+                  </span>
                 </div>
                 {selectedWork === index && (
-
-                  <div key={index} className="space-y-4 p-8 border border-zinc-200 rounded-b-md shadow-md">
+                  <div
+                    key={index}
+                    className="space-y-4 p-5 border border-zinc-200 rounded-b-md shadow-md"
+                  >
                     {project?.Title && (
                       <div className="font-semibold">{project?.Title}</div>
                     )}
@@ -65,7 +76,8 @@ export default function Academics({ data }) {
                             target="_blank"
                             className="underline"
                           >
-                            {project?.codeRepository}
+                            {/* {project?.codeRepository} */}
+                            Github
                           </a>
                         </div>
                       )}
@@ -77,12 +89,15 @@ export default function Academics({ data }) {
                             target="_blank"
                             className="underline"
                           >
-                            {project?.web}
+                            {/* {project?.web} */}
+                            Website
                           </a>
                         </div>
                       )}
                     </div>
-                    <div className="text-xs 2xl:text-sm line-clamp-5">{project?.description && project?.description}</div>
+                    <div className="text-xs 2xl:text-sm line-clamp-5">
+                      {project?.description && project?.description}
+                    </div>
                     {project?.image && (
                       <Image
                         src={project?.image}
@@ -91,26 +106,25 @@ export default function Academics({ data }) {
                         width={200}
                         className="h-auto w-full"
                       />
-                    //   <div style={{ position: 'relative', width: '300px', height: '300px' }}>
-                    //   <Image
-                    //     src={project?.image}
-                    //     alt="Picture of the author"
-                    //     sizes="300px"
-                    //     fill
-                    //     style={{
-                    //       objectFit: 'contain',
-                    //     }}
-                    //   />
-                    // </div>
+                      //   <div style={{ position: 'relative', width: '300px', height: '300px' }}>
+                      //   <Image
+                      //     src={project?.image}
+                      //     alt="Picture of the author"
+                      //     sizes="300px"
+                      //     fill
+                      //     style={{
+                      //       objectFit: 'contain',
+                      //     }}
+                      //   />
+                      // </div>
                     )}
                     {project?.associatedSkills && (
                       <div className="flex flex-wrap gap-5">
                         {project?.associatedSkills?.map((skill, index) => (
-                          <span
-                            key={index}
-                            className={`  text-black text-sm`}
-                          >
-                            <span className="bg-zinc-100 p-2 2xl:p-2.5 rounded-md shadow-md">{skill}</span>
+                          <span key={index} className={`  text-black text-sm`}>
+                            <span className="bg-zinc-100 p-2 2xl:p-2.5 rounded-md shadow-md">
+                              {skill}
+                            </span>
                           </span>
                         ))}
                       </div>
@@ -125,10 +139,11 @@ export default function Academics({ data }) {
             {data?.content?.projects?.map((project, index) => (
               <div
                 key={index}
-                className={`text-base font-normal flex items-center justify-center text-center p-3 w-full rounded-3xl shadow-md cursor-pointer ${index === selectedWork
-                  ? "bg-zinc-200 text-black"
-                  : "bg-zinc-100 text-black"
-                  }`}
+                className={`text-base font-normal flex items-center justify-center text-center p-3 w-full rounded-3xl shadow-md cursor-pointer ${
+                  index === selectedWork
+                    ? "bg-zinc-200 text-black"
+                    : "bg-zinc-100 text-black"
+                }`}
                 onClick={() => setSelectedWork(index)}
               >
                 {project?.Title && project?.Title}
@@ -171,15 +186,17 @@ export default function Academics({ data }) {
                     </div>
                   )}
                 </div>
-                <div className=" text-xs 2xl:text-sm">{project?.description && project?.description}</div>
+                <div className=" text-xs 2xl:text-sm">
+                  {project?.description && project?.description}
+                </div>
                 {project?.image && (
-                      <Image
-                      src={project?.image}
-                      alt="Project Image"
-                      height={600}
-                      width={600}
-                      className="h-auto w-full"
-                    />
+                  <Image
+                    src={project?.image}
+                    alt="Project Image"
+                    height={600}
+                    width={600}
+                    className="h-auto w-full"
+                  />
                 )}
                 {project?.associatedSkills && (
                   <div className="grid grid-cols-3 2xl:grid-cols-4 gap-3 text-center">

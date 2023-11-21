@@ -82,10 +82,10 @@ const Modal = ({ isOpen, onClose, data, activePage, setActivePage, aboutRef, wor
 })}
       <li className="text-base lg:hidden">
         <button
-          // className={`${index === activePage ? 'font-bold' : 'font-normal'}`}
+          className={`${activePage === 100 ? 'font-bold' : 'font-normal'}`}
           onClick={() => {
             onClose();
-            // setActivePage(index);
+            setActivePage(100);
             scrollToRef(skillsRef);
           }}
         >

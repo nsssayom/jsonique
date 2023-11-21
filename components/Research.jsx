@@ -43,7 +43,7 @@ export default function Academics({ data }) {
                 <div key={index} className="mb-4">
                   <div
                     key={index}
-                    className={`text-base font-normal flex items-center justify-between text-center p-3 px-8 w-full cursor-pointer space-x-2  ${
+                    className={`text-base font-normal flex items-center justify-between text-center p-3 px-5 w-full cursor-pointer space-x-2  ${
                       index === selectedWork
                         ? "bg-zinc-200 text-black rounded-t-md"
                         : "bg-zinc-100 text-black rounded-md shadow-md"
@@ -64,7 +64,7 @@ export default function Academics({ data }) {
                   {selectedWork === index && (
                     <div
                       key={index}
-                      className="space-y-4 p-8 border border-zinc-200 rounded-b-md shadow-md"
+                      className="space-y-4 p-5 border border-zinc-200 rounded-b-md shadow-md"
                     >
                                           {research?.Title && (
                       <div className="font-semibold">{research?.Title}</div>

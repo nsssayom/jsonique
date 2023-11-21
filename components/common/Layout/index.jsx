@@ -80,7 +80,7 @@ const Layout = ({ children, data, activePage, setActivePage }) => {
         {activePage === 3 && <Research data={data?.pages[activePage]} />}
         {activePage === 4 && <Projects data={data?.pages[activePage]} />}
       </div>
-      <div className="flex flex-col items-center justify-center  px-10 sm:px-20 lg:px-30 xl:px-40 bg-white sm:hidden">
+      <div className="flex flex-col items-center justify-center px-10 sm:px-20 lg:px-30 xl:px-40 bg-white sm:hidden">
         <div ref={aboutRef}>
           <About data={data.pages[0]} />
         </div>
