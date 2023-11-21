@@ -17,7 +17,7 @@ const Header = ({ data, activePage, setActivePage, onToggleModal }) => {
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
-      const scrollThreshold = 42; // Adjust this value to change when the title appears
+      const scrollThreshold = 45; // Adjust this value to change when the title appears
 
       if (scrollPosition > scrollThreshold) {
         setShowTitle(true);
