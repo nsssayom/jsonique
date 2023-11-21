@@ -58,7 +58,7 @@ export default function About({ data }) {
           ))}
         </div>
         <div className="flex flex-col leading-none">
-          <a href={data?.content?.actionButton?.link} target="_blank" className="text-base sm:text-lg font-semibold flex items-center justify-center space-x-2 border-gray-200 border-2 shadow-md hover:bg-gray-300 hover:scale-95 transition duration-700 ease-in-out rounded-md px-5 py-1.5">
+          <a href={data?.content?.actionButton?.link} target="_blank" className="text-sm sm:text-lg font-semibold flex items-center justify-center space-x-2 border-gray-200 border-2 shadow-md hover:bg-gray-300 hover:scale-95 transition duration-700 ease-in-out rounded-md px-5 py-1.5">
             <span>{IconComponentForResume && <IconComponentForResume />}</span>
             <span>{data?.content?.actionButton?.text}</span>
           </a>
