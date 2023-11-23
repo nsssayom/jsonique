@@ -119,10 +119,11 @@ export default function Academics({ data }) {
                       // </div>
                     )}
                     {project?.associatedSkills && (
-                      <div className="flex flex-wrap gap-5">
-                        {project?.associatedSkills?.map((skill, index) => (
+      <div className="flex flex-wrap gap-x-3 gap-y-6">
+      {project?.associatedSkills?.map((skill, index) => (
                           <span key={index} className={`  text-black text-sm`}>
-                            <span className="bg-zinc-100 p-2 2xl:p-2.5 rounded-md shadow-md">
+                            <span             className={`border-zinc-200 border-2 p-1.5 px-3 2xl:p-2.5 rounded-md shadow-md text-sm font-medium`}
+>
                               {skill}
                             </span>
                           </span>

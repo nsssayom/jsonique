@@ -3,6 +3,8 @@ import { BsTelephone, BsDownload } from "react-icons/bs";
 import { BiEnvelope, BiBriefcase } from "react-icons/bi";
 import { GrLocation } from "react-icons/gr";
 import { LiaDiscord } from "react-icons/lia";
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { SiGooglescholar } from "react-icons/si";
 
 export default function About({ data }) {
 
