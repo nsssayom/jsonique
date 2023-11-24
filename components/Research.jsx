@@ -29,7 +29,7 @@ export default function Academics({ data }) {
   const IconComponentForTitle = iconComponentMap[data?.titleIcon] || null;
 
   return (
-    <div className="space-y-20 h-full flex flex-col w-full pt-16 lg:pt-0">
+    <div className="space-y-20 h-full flex flex-col w-full pt-16 sm:pt-0">
       <div className="grid lg:grid-cols-2 lg:gap-20 grow">
         <div className="col-span-1 flex flex-col items-start justify-center space-y-6 2xl:space-y-12">
           <div className="flex flex-col leading-none w-full items-center justify-center space-y-8">
@@ -91,28 +91,26 @@ export default function Academics({ data }) {
                           </div>
                         )}
                         {research?.codeRepository && (
-                          <div className="flex items-center space-x-1">
+                          <div className="flex space-x-2">
                             <BiCodeAlt className="text-lg" />
                             <a
                               href={research?.codeRepository}
                               target="_blank"
-                              className="underline text-xs lg:text-lg"
+                              className="underline text-xs lg:text-lg break-all"
                             >
-                              {/* {research?.codeRepository} */}
-                              Github
+                              {research?.codeRepository}
                             </a>
                           </div>
                         )}
                         {research?.doi && (
-                          <div className="flex items-center space-x-2">
-                            <GoBook className="text-base" />
+                          <div className="flex space-x-2">
+                            <GoBook className="text-lg" />
                             <a
                               href={research?.doi}
                               target="_blank"
-                              className="underline text-xs lg:text-lg"
+                              className="underline text-xs lg:text-lg break-all"
                             >
-                              {/* {research?.doi} */}
-                              DOI
+                              {research?.doi}
                             </a>
                           </div>
                         )}
@@ -173,39 +171,45 @@ export default function Academics({ data }) {
                     <div className="font-semibold">{research?.Title}</div>
                   )}
                   <div className="text-sm 2xl:text-base font-normal space-y-1">
-                    {research?.Authors && (
-                      <div className="flex items-center space-x-2">
-                        <RiTeamLine />
-                        {research.Authors.map((author, index) => (
-                          <span
-                            key={index}
-                            className={`${author?.self && "font-semibold"}`}
-                          >
-                            {author.name}
-                            {index < research.Authors.length - 1 ? ", " : ""}
-                          </span>
-                        ))}
-                      </div>
-                    )}
+                                            {research?.Authors && (
+                          <div className="flex space-x-2">
+                            <RiTeamLine className="text-lg" />
+                            <span className="">
+                              {research.Authors.map((author, index) => (
+                                <span
+                                  key={index}
+                                  className={`${
+                                    author?.self && "font-semibold"
+                                  }`}
+                                >
+                                  {author.name}
+                                  {index < research.Authors.length - 1
+                                    ? ", "
+                                    : ""}
+                                </span>
+                              ))}
+                            </span>
+                          </div>
+                        )}
                     {research?.codeRepository && (
-                      <div className="flex items-center space-x-2">
+                      <div className="flex space-x-2">
                         <BiCodeAlt />
                         <a
                           href={research?.codeRepository}
                           target="_blank"
-                          className="underline text-lg"
+                          className="underline break-all"
                         >
                           {research?.codeRepository}
                         </a>
                       </div>
                     )}
                     {research?.doi && (
-                      <div className="flex items-center space-x-2">
+                      <div className="flex space-x-2">
                         <GiOpenBook />
                         <a
                           href={research?.doi}
                           target="_blank"
-                          className="underline"
+                          className="underline break-all"
                         >
                           {research?.doi}
                         </a>

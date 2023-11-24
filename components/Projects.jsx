@@ -69,28 +69,26 @@ export default function Academics({ data }) {
                     )}
                     <div className="text-sm 2xl:text-base font-normal space-y-1">
                       {project?.codeRepository && (
-                        <div className="flex items-center space-x-2">
-                          <BiCodeAlt />
+                        <div className="flex space-x-2">
+                          <BiCodeAlt className="text-lg" />
                           <a
                             href={project?.codeRepository}
                             target="_blank"
-                            className="underline"
+                            className="underline break-all"
                           >
-                            {/* {project?.codeRepository} */}
-                            Github
+                            {project?.codeRepository}
                           </a>
                         </div>
                       )}
                       {project?.web && (
-                        <div className="flex items-center space-x-2">
-                          <TbWorld />
+                        <div className="flex space-x-2">
+                          <TbWorld className="text-lg" />
                           <a
                             href={project?.web}
                             target="_blank"
-                            className="underline"
+                            className="underline break-all"
                           >
-                            {/* {project?.web} */}
-                            Website
+                            {project?.web}
                           </a>
                         </div>
                       )}
@@ -159,16 +157,16 @@ export default function Academics({ data }) {
             index === selectedWork && (
               <div key={index} className="space-y-4">
                 {project?.Title && (
-                  <div className="font-semibold">{project?.Title}</div>
+                  <div className="font-semibold ">{project?.Title}</div>
                 )}
                 <div className="text-sm 2xl:text-base font-normal space-y-1">
                   {project?.codeRepository && (
-                    <div className="flex items-center space-x-2">
+                    <div className="flex space-x-2">
                       <BiCodeAlt />
                       <a
                         href={project?.codeRepository}
                         target="_blank"
-                        className="underline"
+                        className="underline break-all"
                       >
                         {project?.codeRepository}
                       </a>
@@ -180,7 +178,7 @@ export default function Academics({ data }) {
                       <a
                         href={project?.web}
                         target="_blank"
-                        className="underline text-lg"
+                        className="underline break-all"
                       >
                         {project?.web}
                       </a>
