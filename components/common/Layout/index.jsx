@@ -73,21 +73,21 @@ const Layout = ({ children, data, activePage, setActivePage }) => {
   return (
     <div className="flex flex-col h-screen font-mono select-none w-screen">
       <Header data={data} activePage={activePage} setActivePage={setActivePage} onToggleModal={handleToggleModal} />
-      <div className="flex-grow sm:flex items-center justify-center px-5 sm:px-20 lg:px-30 xl:px-40 bg-white hidden">
+      <div className="flex-grow lg:flex items-center justify-center px-5 sm:px-20 lg:px-30 xl:px-40 bg-white hidden">
         {activePage === 0 && <About data={data?.pages[activePage]} />}
         {activePage === 1 && <Works data={data?.pages[activePage]} />}
         {activePage === 2 && <Academics data={data?.pages[activePage]} />}
         {activePage === 3 && <Research data={data?.pages[activePage]} />}
         {activePage === 4 && <Projects data={data?.pages[activePage]} />}
       </div>
-      <div className="flex flex-col items-center justify-center px-10 sm:px-20 lg:px-30 xl:px-40 bg-white sm:hidden text-black">
+      <div className="flex flex-col items-center justify-center px-10 sm:px-20 lg:px-30 xl:px-40 bg-white lg:hidden text-black">
         <div ref={aboutRef}>
           <About data={data.pages[0]} />
         </div>
         <div ref={worksRef}>
           <Works data={data.pages[1]} />
         </div>
-        <div ref={skillsRef} className="sm:hidden">
+        <div ref={skillsRef} className="lg:hidden">
           <Skills data={data.pages[1]} />
         </div>
         <div ref={academicsRef}>
@@ -100,7 +100,7 @@ const Layout = ({ children, data, activePage, setActivePage }) => {
           <Projects data={data.pages[4]} />
         </div>
       </div>
-      <div className="hidden sm:block"><Footer data={data} activePage={activePage} setActivePage={setActivePage} /></div>
+      <div className="hidden lg:block"><Footer data={data} activePage={activePage} setActivePage={setActivePage} /></div>
       <div className='lg:hidden'>    <Modal isOpen={isModalOpen} onClose={handleToggleModal} data={data} activePage={activePage} setActivePage={setActivePage} aboutRef={aboutRef} worksRef={worksRef} skillsRef={skillsRef} academicsRef={academicsRef} researchRef={researchRef} projectsRef={projectsRef} scrollToRef={scrollToRef} />
 </div>
     </div>

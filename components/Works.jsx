@@ -56,7 +56,7 @@ export default function Works({ data }) {
   const uniqueSkills = Array.from(uniqueSkillsMap.values());
 
   return (
-    <div className="lg:space-y-20 h-full flex flex-col w-full pt-16 sm:pt-0">
+    <div className="lg:space-y-20 h-full flex flex-col w-full pt-16 lg:pt-0">
       <div className="grid lg:grid-cols-2 lg:gap-20 grow">
         <div className="col-span-1 flex flex-col items-start justify-center space-y-6 2xl:space-y-12">
           <div className="flex flex-col leading-none w-full items-center justify-center space-y-8">

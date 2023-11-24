@@ -28,7 +28,7 @@ export default function Academics({ data }) {
   const IconComponentForTitle = iconComponentMap[data?.titleIcon] || null;
 
   return (
-    <div className="grid lg:grid-cols-2 gap-20 grow w-full pt-16 sm:pt-0">
+    <div className="grid lg:grid-cols-2 gap-20 grow w-full pt-16 lg:pt-0">
       <div className="col-span-1 flex flex-col items-start justify-center space-y-6 2xl:space-y-12">
         <div className="flex flex-col leading-none w-full items-center justify-center space-y-8">
           <span className="flex items-center space-x-2">

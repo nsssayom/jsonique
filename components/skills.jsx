@@ -37,7 +37,7 @@ export default function Skills({ data }) {
     const uniqueSkills = Array.from(uniqueSkillsMap.values());
 
   return (
-    <div className="space-y-6 pt-16 sm:pt-0">
+    <div className="space-y-6 pt-16 lg:pt-0">
       <span className="flex items-center justify-center space-x-2">
         <HiOutlineSquare3Stack3D className="text-xl" />
         <span className="font-bold text-lg">Skills</span>
