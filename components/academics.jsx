@@ -96,7 +96,7 @@ export default function Academics({ data }) {
               ))}
             </div>
 
-            <div className="space-y-4 w-full lg:flex flex-col items-center justify-center hidden">
+            <div className="space-y-4 w-full lg:flex flex-col items-center justify-center hidden pt-10">
               {data?.content?.educations?.map((education, index) => (
                 <div
                   key={index}

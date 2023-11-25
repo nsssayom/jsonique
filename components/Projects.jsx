@@ -151,7 +151,7 @@ export default function Academics({ data }) {
           </div>
         </div>
       </div>
-      <div className="col-span-1 lg:flex flex-col items-center justify-center hidden">
+      <div className="col-span-1 lg:flex flex-col items-center justify-center hidden pt-10">
         {data?.content?.projects?.map(
           (project, index) =>
             index === selectedWork && (

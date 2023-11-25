@@ -152,7 +152,7 @@ export default function Works({ data }) {
             </div>
           </div>
         </div>
-        <div className="col-span-1 lg:flex flex-col items-center justify-center space-y-12 hidden">
+        <div className="col-span-1 lg:flex flex-col items-center justify-center space-y-12 hidden pt-10">
           {data?.content?.experiences?.map(
             (experience, index) =>
               index === selectedWork && (
