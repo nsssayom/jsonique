@@ -55,7 +55,7 @@ const Header = ({ data, activePage, setActivePage, onToggleModal }) => {
         <GiHamburgerMenu className="lg:hidden text-3xl" onClick={onToggleModal} />
         <div className="space-x-6 lg:flex items-center hidden">
           {data?.nav?.navIcons?.map((link, index) => (
-            <a key={index} href={link.url} className="text-2xl flex items-center">
+            <a key={index} href={link.link} className="text-2xl flex items-center" target="_blank">
               {link.name === 'github' && <FaGithub />}
               {link.name === 'linkedin' && <FaLinkedin />}
               {link.name === 'scholar' && <SiGooglescholar />}

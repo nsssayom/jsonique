@@ -129,7 +129,7 @@ const Modal = ({ isOpen, onClose, data, activePage, setActivePage, aboutRef, wor
 
       <div className="space-x-6 flex items-center justify-center">
         {data?.nav?.navIcons?.map((link, index) => (
-          <a key={index} href={link.url} className="text-2xl flex items-center">
+          <a key={index} href={link.link} className="text-2xl flex items-center" target="_blank">
             {link.name === 'github' && <FaGithub />}
             {link.name === 'linkedin' && <FaLinkedin />}
             {link.name === 'scholar' && <SiGooglescholar />}
