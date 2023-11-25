@@ -194,7 +194,7 @@ export default function Academics({ data }) {
                     alt="Project Image"
                     height={600}
                     width={600}
-                    className="h-auto w-full"
+                    className="h-52 bg-slate-600 w-auto"
                   />
                 )}
                 {project?.associatedSkills && (
