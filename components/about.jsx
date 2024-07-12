@@ -60,11 +60,16 @@ export default function About({ data }) {
           ))}
         </div>
         <div className="flex flex-col leading-none">
-          <a href={data?.content?.actionButton?.link} target="_blank" className="text-sm sm:text-lg font-semibold flex items-center justify-center space-x-2 border-gray-200 border-2 shadow-md hover:bg-gray-300 hover:scale-95 transition duration-700 ease-in-out rounded-md px-5 py-1.5">
+          <a href={data?.content?.actionButton?.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm sm:text-lg font-semibold flex items-center justify-center space-x-2 border-gray-200 border-2 shadow-md hover:bg-gray-300 hover:scale-95 transition duration-700 ease-in-out rounded-md px-5 py-1.5"
+            onClick={() => window.open(data?.content?.actionButton?.link, '_blank').focus()}>
             <span>{IconComponentForResume && <IconComponentForResume />}</span>
             <span>{data?.content?.actionButton?.text}</span>
           </a>
         </div>
+
       </div>
       <div data-aos="fade-left" className="lg:col-span-3 lg:flex items-center justify-center hidden">
         <Image src="/banner/banner1.png" alt="about" width={500} height={200} />
