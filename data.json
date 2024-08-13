@@ -17,16 +17,12 @@
               "page": "academics"
           },
           {
-              "name": "Researchs",
+              "name": "Research",
               "page": "research"
           },
           {
               "name": "Projects",
               "page": "projects"
-          },
-                  {
-              "name": "Opi",
-              "page": "Opi"
           }
       ],
       "navIcons": [
